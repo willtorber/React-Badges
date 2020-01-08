@@ -5,6 +5,17 @@
   overflow: hidden;
   height: 380px;
 }
+.Badge__form {
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+  margin: 0.5em;
+}
+
+.spacious {
+  margin: 10px;
+}
 
 .Badge__header {
   padding: 0.5rem 0;

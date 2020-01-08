@@ -1,0 +1,23 @@
+.page {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background: url("../../images/stars.svg"), #1b1b25;
+  background-repeat: repeat;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+span > img {
+  width: 50%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4 {
+    text-align: center;
+}

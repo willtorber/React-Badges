@@ -1,23 +1,22 @@
-import React from 'react';
+import React from "react";
 
 class BadgeForm extends React.Component {
-
   handleClick = e => {
-    console.log('Button was clicked');
+    console.log("Button was clicked");
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('Form was submitted');
+    console.log("Form was submitted");
   };
 
   render() {
     return (
-      <div>
-        <h1>New Attendant</h1>
+      <div className="Badge__form">
+        <h1 style={{ textAlign: "center" }}>New Attendant</h1>
 
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
+          <div className="form-group spacious">
             <label>First Name</label>
             <input
               onChange={this.props.onChange}
@@ -28,7 +27,7 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group spacious">
             <label>Last Name</label>
             <input
               onChange={this.props.onChange}
@@ -39,7 +38,7 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group spacious">
             <label>Email</label>
             <input
               onChange={this.props.onChange}
@@ -50,7 +49,7 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group spacious">
             <label>Job Title</label>
             <input
               onChange={this.props.onChange}
@@ -61,7 +60,7 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group spacious">
             <label>Twitter</label>
             <input
               onChange={this.props.onChange}
@@ -72,7 +71,7 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-          <button onClick={this.handleClick} className="btn btn-primary">
+          <button onClick={this.handleClick} className="btn btn-primary spacious">
             Save
           </button>
         </form>
