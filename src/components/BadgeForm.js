@@ -13,7 +13,7 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <div className="Badge__form">
-        <h1 style={{ textAlign: "center" }}>New Attendant</h1>
+        <h1 style={{ textAlign: "center" }}>{this.props.title}</h1>
 
         <form onSubmit={this.props.onSubmit}>
           <div className="form-group spacious">

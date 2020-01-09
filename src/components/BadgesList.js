@@ -2,12 +2,12 @@ import React from "react";
 
 import "./styles/BadgesList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faMailBulk, faEdit } from "@fortawesome/free-solid-svg-icons";
 import iconTwitter from "../images/icons/twitter-brands.svg";
 import Gravatar from "./Gravatar";
+import { Link } from "react-router-dom";
 
 class BadgesListItem extends React.Component {
-
   render() {
     console.log(this.props.badge);
 
@@ -17,6 +17,11 @@ class BadgesListItem extends React.Component {
           <strong>
             {this.props.badge.firstName} {this.props.badge.lastName}
           </strong>
+          <Link to={`/badges/${this.props.badge.id}/edit`}>
+            <span className="float-right">
+              <FontAwesomeIcon icon={faEdit} />
+            </span>
+          </Link>
         </div>
         <div className="card-body">
           <div className="row">
