@@ -22,7 +22,8 @@ En este punto se estará instalando React y otras herramientas, también se conf
 Una vez se instala todo entra a la carpeta src donde estará todo el código fuente de la aplicación, siendo el más importante index.js que es el punto de entrada a la aplicación.
 
 3. Finalmente, para correr la aplicación se usa el comando **npm start**
-Otras herramientas:
+
+#### Otras herramientas:
 * Babel: Traduce Javascript moderno (JSX) a un Javascript que todos los navegadores puedan interpretar.
 * Eslint: Lee el código y avisa de errores.
 
