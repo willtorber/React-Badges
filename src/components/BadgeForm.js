@@ -5,17 +5,17 @@ class BadgeForm extends React.Component {
     console.log("Button was clicked");
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log("Form was submitted");
-  };
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log("Form was submitted");
+  // };
 
   render() {
     return (
       <div className="Badge__form">
         <h1 style={{ textAlign: "center" }}>New Attendant</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group spacious">
             <label>First Name</label>
             <input

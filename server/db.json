@@ -440,6 +440,22 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "William",
+      "lastName": "Torres",
+      "email": "willtor1100@gmail.com",
+      "jobTitle": "Software Developer",
+      "twitter": "willtorber",
+      "id": "AbgAKIN"
+    },
+    {
+      "firstName": "Rocio",
+      "lastName": "Bermon",
+      "email": "rocio@gmail.com",
+      "jobTitle": "Asesora de Ventas",
+      "twitter": "rociotbt",
+      "id": "Nu8qpix"
     }
   ]
 }

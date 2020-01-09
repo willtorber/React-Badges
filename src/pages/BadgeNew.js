@@ -1,21 +1,28 @@
-import React from "react";
+import React from 'react';
 
-import "./styles/BadgeNew.css";
-import header from "../images/badge-header.svg";
-import Badge from "../components/Badge";
-import BadgeForm from "../components/BadgeForm";
+import './styles/BadgeNew.css';
+import header from '../images/platziconf-logo.svg';
+import Badge from '../components/Badge';
+import BadgeForm from '../components/BadgeForm';
+import PageLoading from '../components/PageLoading';
+import api from '../api';
 
 class BadgeNew extends React.Component {
 
-  state = {
-    form: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      jobTitle: '',
-      twitter: '',
-    },
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      loading: false,
+      error: null,
+      form: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        jobTitle: '',
+        twitter: '',
+      },
+    };  
+  }
 
   handleChange = e => {
     this.setState({
@@ -26,7 +33,25 @@ class BadgeNew extends React.Component {
     });
   };
 
+  handleSubmit = async e => {
+    // Detiene la ejecución natual del evento
+    e.preventDefault();
+    this.setState({ loading: true, error: null });
+
+    try {
+      console.log(this.state.form);
+      await api.badges.create(this.state.form);
+      this.setState({ loading: false });
+      this.props.history.push('/badges');
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+  };
+
   render() {
+    if (this.state.loading) {
+      return <PageLoading/>
+    }
     return (
       <React.Fragment>
         <div className="BadgeNew__hero">
@@ -36,19 +61,20 @@ class BadgeNew extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col col-lg-6 col-md-12 col-xs-12">
-              <Badge
-                firstName={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                twitter={this.state.form.twitter}
-                jobTitle={this.state.form.jobTitle}
-                email={this.state.form.email}
-                avatarUrl="https://lh3.googleusercontent.com/-dTdvon8s8TI/WLLUvVJN47I/AAAAAAAAHPY/RUYwEFOirSkvDftj4vnlGyW6MOKw_yJjgCEwYBhgL/w139-h140-p/WhatsApp%2BImage%2B2017-02-23%2Bat%2B14.59.33.jpeg"
+            <Badge
+                firstName={this.state.form.firstName || 'FIRST_NAME'}
+                lastName={this.state.form.lastName || 'LAST_NAME'}
+                twitter={this.state.form.twitter || 'twitter'}
+                jobTitle={this.state.form.jobTitle || 'JOB_TITLE'}
+                email={this.state.form.email || 'EMAIL'}
+                avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
               />
             </div>
 
             <div className="col col-lg-6 col-md-12 col-xs-12">
-              <BadgeForm
+            <BadgeForm
                 onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
                 formValues={this.state.form}
               />
             </div>

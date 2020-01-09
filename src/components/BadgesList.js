@@ -4,9 +4,13 @@ import "./styles/BadgesList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import iconTwitter from "../images/icons/twitter-brands.svg";
+import Gravatar from "./Gravatar";
 
 class BadgesListItem extends React.Component {
+
   render() {
+    console.log(this.props.badge);
+
     return (
       <div className="card border-info mb-3 ">
         <div className="card-header">
@@ -17,20 +21,21 @@ class BadgesListItem extends React.Component {
         <div className="card-body">
           <div className="row">
             <div className="col-4">
-              <img
+              <Gravatar
                 className="BadgesListItem__avatar"
-                src={this.props.badge.avatarUrl}
-                alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
+                firstName={this.props.badge.firstName}
+                lastName={this.props.badge.lastName}
+                avatar={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
               />
             </div>
             <div className="col-8">
-              <p class="card-text">
+              <p className="card-text">
                 <span>
                   <FontAwesomeIcon icon={faUser} />
                 </span>
                 {this.props.badge.jobTitle}
               </p>
-              <p class="card-text">
+              <p className="card-text">
                 <span>
                   <FontAwesomeIcon icon={faMailBulk} />
                 </span>
@@ -38,7 +43,7 @@ class BadgesListItem extends React.Component {
                   {this.props.badge.email}
                 </a>
               </p>
-              <p class="card-text">
+              <p className="card-text">
                 <span>
                   <img
                     style={{ width: "18px" }}

@@ -9,7 +9,7 @@ function NotFound() {
     <div className="page">
       <div className="center">
         <span>
-          <img src={img404} alt="Not found image" className="center" />
+          <img src={img404} alt="Not found" className="center" />
         </span>
         <br />
         <h3 style={{ textAlign: "center" }} className="font-weight-bold">

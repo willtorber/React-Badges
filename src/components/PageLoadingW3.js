@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './styles/PageLoading.css';
-import Loader from './Loader';
+import LoaderW3 from './LoaderW3';
 
 function PageLoading() {
   return (
     <div className="PageLoading">
-      <Loader />
+      <LoaderW3 />
     </div>
   );
 }
