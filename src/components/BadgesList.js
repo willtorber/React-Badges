@@ -2,7 +2,7 @@ import React from "react";
 
 import "./styles/BadgesList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faMailBulk, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faMailBulk, faEye } from "@fortawesome/free-solid-svg-icons";
 import iconTwitter from "../images/icons/twitter-brands.svg";
 import Gravatar from "./Gravatar";
 import { Link } from "react-router-dom";
@@ -17,9 +17,9 @@ class BadgesListItem extends React.Component {
           <strong>
             {this.props.badge.firstName} {this.props.badge.lastName}
           </strong>
-          <Link to={`/badges/${this.props.badge.id}/edit`}>
+          <Link to={`/badges/${this.props.badge.id}`}>
             <span className="float-right">
-              <FontAwesomeIcon icon={faEdit} />
+              <FontAwesomeIcon icon={faEye} />
             </span>
           </Link>
         </div>
